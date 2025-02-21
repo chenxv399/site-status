@@ -82,13 +82,23 @@ const navMenu = computed<DropdownOption[]>(() => [
     label: "GitHub",
     icon: renderIcon("icon:github"),
     props: {
-      onClick: () => window.open("https://github.com/imsyy/site-status"),
+      onClick: () => window.open("https://github.com/chenxv399/site-status"),
     },
   },
   {
     key: "about",
     label: t("nav.about"),
     icon: renderIcon("icon:info"),
+    props: {
+      onClick: () => {
+        window.$dialog.info({
+          title: t("nav.about"),
+          content: config.public.SITE_DESCRIPTION,
+          positiveText: "确定",
+          transformOrigin: "center",
+        });
+      },
+    },
   },
   {
     key: "logout",
