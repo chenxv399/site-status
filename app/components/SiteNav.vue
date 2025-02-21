@@ -93,7 +93,7 @@ const navMenu = computed<DropdownOption[]>(() => [
       onClick: () => {
         window.$dialog.info({
           title: t("nav.about"),
-          content: config.public.SITE_DESCRIPTION,
+          content: config.public.siteDescription,
           positiveText: "确定",
           transformOrigin: "center",
         });
